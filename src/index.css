@@ -1,0 +1,301 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Lalwani Industries Design System - Agricultural & Industrial Theme */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap');
+
+@layer base {
+  :root {
+    /* Primary - Deep Forest Green */
+    --primary: 142 45% 22%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - Steel Grey */
+    --secondary: 210 10% 40%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Accent - Warm Orange */
+    --accent: 25 95% 53%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Background & Surface */
+    --background: 40 20% 98%;
+    --foreground: 220 20% 15%;
+    
+    /* Card */
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 15%;
+    
+    /* Muted */
+    --muted: 40 15% 93%;
+    --muted-foreground: 220 10% 45%;
+    
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 15%;
+    
+    /* Border */
+    --border: 40 15% 88%;
+    --input: 40 15% 88%;
+    --ring: 142 45% 22%;
+    
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Custom colors */
+    --earth-brown: 30 40% 25%;
+    --wheat-gold: 42 70% 55%;
+    --soil-dark: 25 30% 18%;
+    --steel-light: 210 15% 75%;
+    --steel-dark: 210 12% 25%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(142 45% 22%) 0%, hsl(142 35% 28%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(25 95% 53%) 0%, hsl(25 90% 45%) 100%);
+    --gradient-steel: linear-gradient(180deg, hsl(210 15% 95%) 0%, hsl(210 10% 85%) 100%);
+    
+    /* Shadows */
+    --shadow-card: 0 4px 20px -4px hsl(220 20% 15% / 0.08);
+    --shadow-card-hover: 0 12px 32px -8px hsl(220 20% 15% / 0.15);
+    --shadow-button: 0 2px 8px -2px hsl(142 45% 22% / 0.3);
+    
+    --radius: 0.5rem;
+    
+    /* Sidebar - keeping defaults */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --primary: 142 40% 35%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 210 10% 30%;
+    --secondary-foreground: 0 0% 95%;
+    
+    --accent: 25 90% 55%;
+    --accent-foreground: 0 0% 100%;
+    
+    --background: 220 20% 10%;
+    --foreground: 40 15% 95%;
+    
+    --card: 220 18% 14%;
+    --card-foreground: 40 15% 95%;
+    
+    --muted: 220 15% 18%;
+    --muted-foreground: 40 10% 60%;
+    
+    --popover: 220 18% 14%;
+    --popover-foreground: 40 15% 95%;
+    
+    --border: 220 15% 22%;
+    --input: 220 15% 22%;
+    --ring: 142 40% 35%;
+    
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient-hero {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .bg-gradient-cta {
+    background: var(--gradient-cta);
+  }
+  
+  .bg-gradient-steel {
+    background: var(--gradient-steel);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-card-hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+  
+  .shadow-button {
+    box-shadow: var(--shadow-button);
+  }
+}
+
+/* Custom Animations */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes counter-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.5s ease-out forwards;
+}
+
+.animate-slide-right {
+  animation: slide-right 0.6s ease-out forwards;
+}
+
+.animate-counter {
+  animation: counter-up 0.4s ease-out forwards;
+}
+
+/* Stagger delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Scroll-triggered animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Product card hover effect */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Button ripple effect */
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ripple::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn-ripple:active::after {
+  width: 300px;
+  height: 300px;
+}
